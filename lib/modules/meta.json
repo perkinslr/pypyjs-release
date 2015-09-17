@@ -13,7 +13,6 @@
     "_ffi", 
     "_rawffi", 
     "_subprocess", 
-    "threading", 
     "thread", 
     "audiodev", 
     "audioop", 
@@ -312,6 +311,8 @@
     ], 
     "_emx_link.link": [
       "os", 
+      "os", 
+      "os", 
       "os"
     ], 
     "_gdbm_cffi.ffi": [
@@ -446,13 +447,19 @@
     ], 
     "ce": [
       "os", 
+      "os", 
+      "os", 
       "os"
     ], 
     "ce.*": [
       "os", 
+      "os", 
+      "os", 
       "os"
     ], 
     "ce._exit": [
+      "os", 
+      "os", 
       "os", 
       "os"
     ], 
@@ -776,6 +783,8 @@
       "test.test_importhooks"
     ], 
     "riscospath": [
+      "os", 
+      "os", 
       "os", 
       "os"
     ], 
