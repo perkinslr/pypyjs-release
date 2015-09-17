@@ -1402,6 +1402,25 @@ def decode_long(data):
         n -= 1L << (nbytes * 8)
     return n
 
+import js
+
+jdir = js.eval('''function jdir(obj){
+    var L = [];
+    for (var i in obj) {
+        L.push(i);
+    }
+    return L;
+};jdir
+''')
+
+jlist = lambda val: [val[i] for i in xrange(val.length)]
+
+Pickler.dispatch[js.Number]=lambda pickler, val: pickler.save(float(val))
+Pickler.dispatch[js.String]=lambda pickler, val: pickler.save(unicode(val))
+Pickler.dispatch[js.Boolean]=lambda pickler, val: pickler.save(bool(val))
+Pickler.dispatch[js.Object]=lambda pickler, val: pickler.save({k:val[k] for k in jlist(jdir(val))})
+Pickler.dispatch[js.Array]=lambda pickler, val: pickler.save(jlist(val))
+
 # Shorthands
 
 try:
