@@ -3839,6 +3839,13 @@
         "operator.itemgetter"
       ]
     }, 
+    "helper": {
+      "file": "helper.py", 
+      "imports": [
+        "__builtin__", 
+        "pydoc"
+      ]
+    }, 
     "hmac": {
       "file": "hmac.py", 
       "imports": [
